@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // jab bhi ap promise create karin gay new say start ho ga or executor function banay ga or os may 2 parameters pass hongay resolve 
+  //and reject
+  var pobj1=new Promise((resolve,reject)=>{
+    setTimeout(func,2000)
+    function func()
+    {
+        var arr=[1,2,3,4,5]
+        resolve(arr)
+        reject("Error SomeThing")
+    }
+  })
+  var pobj2=new Promise((resolve,reject)=>{
+    setTimeout(func1,4000)
+    function func1()
+    {
+        var obj={
+          name:"Bilal",
+          age:21
+        }
+      resolve(obj)
+    }
+  })
+  //or jb promise resolve ho jai ga to os ka output ko show karnay k liay then and catch ka use ho ga
+  pobj1.then((x)=>{
+      console.log(x)
+  }).catch((y)=>{
+       console.log(y)
+  })
+
+
+  pobj2.then((i)=>{
+     console.log(i)
+  })
+</script>
